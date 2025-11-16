@@ -1,26 +1,28 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Benefits from './components/Benefits'
+import Pricing from './components/Pricing'
+import CTA from './components/CTA'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="bg-black min-h-screen font-sans">
+      <Navbar />
+      <main>
+        <Hero />
+        <Benefits />
+        <Pricing />
+        <CTA />
+      </main>
+      <footer className="border-t border-white/10 bg-black text-gray-400">
+        <div className="container mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between">
+          <p>© {new Date().getFullYear()} GIO. Todos los derechos reservados.</p>
+          <div className="flex items-center gap-4 text-sm">
+            <a className="hover:text-yellow-400" href="#">Términos</a>
+            <a className="hover:text-yellow-400" href="#">Privacidad</a>
+          </div>
         </div>
-      </div>
+      </footer>
     </div>
   )
 }
